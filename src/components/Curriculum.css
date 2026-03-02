@@ -1,0 +1,39 @@
+.curriculum__container {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.curriculum__action {
+  order: 1;
+}
+
+.curriculum__content {
+  order: 2;
+}
+
+.curriculum__subtitle {
+  font-size: var(--h2);
+  margin-bottom: var(--mb-2);
+  color: var(--text);
+}
+
+.curriculum__text {
+  line-height: 1.7;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+@media (min-width: 576px) {
+  .curriculum__container {
+    grid-template-columns: auto 1fr;
+    text-align: left;
+  }
+  .curriculum__action {
+    order: 1;
+  }
+  .curriculum__content {
+    order: 2;
+  }
+}

@@ -1,0 +1,123 @@
+.projects__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.projects__intro {
+  margin-bottom: var(--mb-5);
+  max-width: 560px;
+}
+
+.projects__subtitle {
+  font-size: var(--h2);
+  margin-bottom: var(--mb-2);
+  color: var(--text);
+}
+
+.projects__text {
+  line-height: 1.7;
+  color: var(--text);
+  opacity: 0.95;
+}
+
+.projects__link {
+  color: var(--first);
+  font-weight: var(--font-semi);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.projects__link:hover {
+  opacity: 0.9;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+.projects__card {
+  display: block;
+  text-align: left;
+  padding: 1.25rem 1.25rem;
+  background: var(--header-bg);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: inherit;
+  border: 1px solid transparent;
+}
+
+.projects__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: hsl(var(--hue), 89%, 55%, 0.2);
+}
+
+.projects__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.projects__card-title {
+  font-size: 1.1rem;
+  font-weight: var(--font-semi);
+  color: var(--text);
+  margin: 0;
+}
+
+.projects__card-icon {
+  flex-shrink: 0;
+  color: var(--first);
+  opacity: 0.8;
+}
+
+.projects__card-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+  opacity: 0.9;
+  margin: 0 0 0.75rem 0;
+}
+
+.projects__card-lang {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: var(--font-semi);
+  color: var(--first);
+  background: hsl(var(--hue), 89%, 55%, 0.12);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+@media (min-width: 480px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    max-width: 720px;
+  }
+
+  .projects__card {
+    padding: 1.5rem 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .projects__grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 960px;
+  }
+}

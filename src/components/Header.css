@@ -1,0 +1,141 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-fixed);
+  background: var(--header-bg);
+  box-shadow: var(--shadow);
+  transition: background-color 0.3s ease;
+}
+
+.nav {
+  max-width: 1024px;
+  margin: 0 auto;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  font-weight: var(--font-semi);
+}
+
+.nav__logo {
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.nav__logo:hover {
+  color: var(--first);
+}
+
+.nav__list {
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+}
+
+.nav__link {
+  color: var(--text);
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--first);
+  transition: width 0.3s ease;
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+  width: 100%;
+}
+
+.nav__link:hover,
+.nav__link.active {
+  color: var(--first);
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius);
+  color: var(--text);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--first);
+  background: hsl(var(--hue), 89%, 55%, 0.12);
+}
+
+.nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--text);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: calc(100vh - var(--header-height));
+    padding: 2rem;
+    background: var(--menu-bg);
+    transition: right 0.35s ease, background-color 0.3s ease;
+    box-shadow: var(--shadow-hover);
+  }
+
+  .nav__menu.show {
+    right: 0;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nav__link {
+    color: #fff;
+  }
+
+  .nav__link::after {
+    background: var(--first);
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav {
+    height: calc(var(--header-height) + 0.5rem);
+  }
+}
