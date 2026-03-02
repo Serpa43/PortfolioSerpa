@@ -35,7 +35,7 @@ export default function Skills() {
             {SKILLS_LIST.map(({ name, Icon }) => (
               <div key={name} className="skills__card">
                 <div className="skills__card-icon">
-                  <Icon size={40} aria-hidden />
+                  <Icon size={40} aria-hidden /> 
                 </div>
                 <span className="skills__card-name">{name}</span>
               </div>
