@@ -58,6 +58,7 @@ export default function Header() {
         </div>
 
         <div className="nav__actions">
+          {isDark ? <a>Dark Mode</a> : <a>Light Mode</a>}
           <button
             type="button"
             className="theme-toggle"
